@@ -1,0 +1,1 @@
+A web client for the Reddit Sports Aggregator API.
