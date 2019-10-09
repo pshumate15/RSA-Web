@@ -34,7 +34,7 @@ main {
 }
 
 h1 {
-    margin: 14px;
+    margin: 24px;
     font-size: 42px;
     color: white;
 }
@@ -44,14 +44,19 @@ h1 {
     color: black;
 }
 
-.element-link div {
+div {
+    height: 90px;
     border: 2px solid #152c41;
     border-radius: 10px;
     background-color: #ffffff;
     margin-bottom: 6px;
-    padding: 4px 14px;
+    padding-left: 24px;
 }
 
-.element-link div:hover {
+div:hover {
     border: 2px solid white;
+}
+
+div h2 {
+    margin-top: 33px;
 }
