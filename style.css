@@ -1,17 +1,18 @@
 html {
     font-family: arial, sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     margin: 0;
     padding: 0;
 }
 
 header {
     font-family: Graphik;
-    background-color: #ffb579;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
+    background-color: #7bbefd;
+    height: 40px;
     text-align: center;
 }
 
@@ -23,5 +24,34 @@ header a {
 }
 
 body {
-    
+    margin: 0;
+    padding-top: 40px;
+    background-color: #152c41;
+}
+
+main {
+    margin: 0 150px;
+}
+
+h1 {
+    margin: 14px;
+    font-size: 42px;
+    color: white;
+}
+
+.element-link {
+    text-decoration: none;
+    color: black;
+}
+
+.element-link div {
+    border: 2px solid #152c41;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 6px;
+    padding: 4px 14px;
+}
+
+.element-link div:hover {
+    border: 2px solid white;
 }
