@@ -11,7 +11,7 @@ header {
     left: 0;
     top: 0;
     right: 0;
-    background-color: #7bbefd;
+    background-color: black;
     height: 40px;
     text-align: center;
 }
@@ -19,24 +19,24 @@ header {
 header a {
     text-decoration: none;
     font-size: 36px;
-    color: black;
+    color: white;
     letter-spacing: 0.05em;
 }
 
 body {
     margin: 0;
     padding-top: 40px;
-    background-color: #152c41;
+    background-color: rgb(242, 242, 242);
 }
 
 main {
-    margin: 0 150px;
+    margin: 0 550px;
 }
 
 h1 {
     margin: 24px;
     font-size: 42px;
-    color: white;
+    color: black;
 }
 
 .element-link {
@@ -46,7 +46,7 @@ h1 {
 
 div {
     height: 90px;
-    border: 2px solid #152c41;
+    border: 2px solid #c6c6c6;
     border-radius: 10px;
     background-color: #ffffff;
     margin-bottom: 6px;
@@ -54,7 +54,7 @@ div {
 }
 
 div:hover {
-    border: 2px solid white;
+    border: 2px solid #484848;
 }
 
 div h2 {
