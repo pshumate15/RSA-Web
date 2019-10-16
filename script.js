@@ -1,6 +1,3 @@
-// TODO:
-    // Consider changing a's to buttons or inputs. Might be easier to attach events to them
-
 const baseUrl = 'https://localhost:44331/api/sports';
 const main = document.querySelector('main');
 const headerLink = document.querySelector('#header-link');
