@@ -3,6 +3,7 @@ html {
     font-size: 13px;
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
 header {
@@ -22,16 +23,18 @@ header a {
     color: white;
     letter-spacing: 0.05em;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 body {
     margin: 0;
     padding-top: 40px;
     background-color: rgb(242, 242, 242);
+    width: calc(100vw - 34px);
 }
 
 main {
-    margin: 0 550px;
+    margin: 0 33%;
 }
 
 h1 {
