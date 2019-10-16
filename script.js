@@ -1,4 +1,4 @@
-const baseUrl = 'https://localhost:44331/api/sports';
+const baseUrl = 'https://redditsportsaggregator.azurewebsites.net/api/sports';
 const main = document.querySelector('main');
 const headerLink = document.querySelector('#header-link');
 
