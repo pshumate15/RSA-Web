@@ -34,7 +34,8 @@ body {
 }
 
 main {
-    margin: 0 33%;
+   width: 575px;
+   margin: 0 auto;
 }
 
 h1 {
