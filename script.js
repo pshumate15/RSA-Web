@@ -12,6 +12,7 @@ headerLink.addEventListener('click', () => {
 
 function showHome() {
     main.textContent = '';
+    
     const h1 = document.createElement('h1');
     h1.textContent = 'Home';
     main.appendChild(h1);
@@ -28,8 +29,8 @@ function showHome() {
         } else {
             main.removeChild(loadingMessage);
 
-            const homeObj = JSON.parse(xhr.response);
-            homeObj.forEach(obj => createLinkDiv(obj));
+            const homeItems = JSON.parse(xhr.response);
+            homeItems.forEach(obj => createLinkDiv(obj));
         }
     };
     xhr.send();
@@ -47,6 +48,7 @@ function createLinkDiv(responseObj) {
     if (responseObj.hasOwnProperty('streams')) {
         a.addEventListener('click', () => {
             main.textContent = '';
+
             const h1 = document.createElement('h1');
             h1.textContent = responseObj.author;
             main.appendChild(h1);
@@ -57,10 +59,11 @@ function createLinkDiv(responseObj) {
             
             window.open(responseObj.streams[0], '_blank');
         });
-    // If there's a links property, then there's more pages after the current page
+    // If there's a links property, then there's more pages to show after the current page
     } else if (responseObj.hasOwnProperty('links')) {
         a.addEventListener('click', () => {
             main.textContent = '';
+
             const h1 = document.createElement('h1');
             h1.textContent = responseObj.name;
             main.appendChild(h1);
