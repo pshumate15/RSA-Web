@@ -15,6 +15,10 @@ function showHome() {
     const h1 = document.createElement('h1');
     h1.textContent = 'Home';
     main.appendChild(h1);
+
+    const loadingMessage = document.createElement('h3');
+    loadingMessage.textContent = 'Loading...';
+    main.appendChild(loadingMessage);
     
     const xhr = new XMLHttpRequest();
     xhr.open('GET', baseUrl);
@@ -22,9 +26,10 @@ function showHome() {
         if (xhr.status !== 200) {
             main.textContent = 'Error occurred when getting content.';
         } else {
+            main.removeChild(loadingMessage);
+
             const homeObj = JSON.parse(xhr.response);
             homeObj.forEach(obj => createLinkDiv(obj));
-
         }
     };
     xhr.send();
