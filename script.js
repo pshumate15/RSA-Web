@@ -24,11 +24,11 @@ function showHome() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', baseUrl);
     xhr.onload = () => {
+        main.removeChild(loadingMessage);
+
         if (xhr.status !== 200) {
             main.textContent = 'Error occurred when getting content.';
         } else {
-            main.removeChild(loadingMessage);
-
             const homeItems = JSON.parse(xhr.response);
             homeItems.forEach(obj => createLinkDiv(obj));
         }
@@ -44,7 +44,7 @@ function createLinkDiv(responseObj) {
     const h2 = document.createElement('h2');
     h2.textContent = responseObj.hasOwnProperty('name') ? responseObj.name : responseObj.author;
 
-    // If there's a streams property, then launch a stream on click
+    // If there is a streams property, then launch a stream on click
     if (responseObj.hasOwnProperty('streams')) {
         a.addEventListener('click', () => {
             main.textContent = '';
@@ -59,7 +59,7 @@ function createLinkDiv(responseObj) {
             
             window.open(responseObj.streams[0], '_blank');
         });
-    // If there's a links property, then there's more pages to show after the current page
+    // If there is a links property, then there are more pages to show after the current page
     } else if (responseObj.hasOwnProperty('links')) {
         a.addEventListener('click', () => {
             main.textContent = '';
@@ -76,15 +76,15 @@ function createLinkDiv(responseObj) {
             xhr.open('GET', responseObj.links[0].href);
             xhr.onreadystatechange = () => {
                 if (xhr.readyState == 4) {
+                    main.removeChild(loadingMessage);
+                    
                     if (xhr.status !== 200) {
                         main.textContent = 'Error occurred while getting content.';
                     } else {
-                        main.removeChild(loadingMessage);
-                        
                         const pageObj = JSON.parse(xhr.response);
     
                         if (pageObj.length === 0) {
-                            createLinkDiv({name: 'No games to display.'});
+                            createLinkDiv({ name: 'No games to display.' });
                         } else {
                             pageObj.forEach(obj => createLinkDiv(obj));                    
                         }
